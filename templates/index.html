@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Customer Churn Prediction</title>
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: 'Times New Roman', serif;
+            color: black;
+            
+        }
+        
+        h1 {
+            font-size: 180%;
+              color: black;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .form {
+            margin-top: 20px;
+        }
+        
+        .card {
+            background-color: skyblue;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow: hidden;
+            color: black;
+            padding: 20px;
+            width:50%;
+            margin: 0 auto;
+        
+        }
+        
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0;
+        }
+        
+        .th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: none;
+            color: black;
+        }
+        
+        .th {
+            background-color: black;
+            color: white;
+        }
+        
+        .tr:nth-child(even) {
+            background-color: skyblue;
+        }
+        
+        label {
+            font-weight: bold;
+            color: black;
+            font-size:20px;
+        }
+        
+        input[type="text"], select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid black;
+            box-sizing: border-box;
+            background-color: white;
+            color: black;
+            border-radius:5px;
+        
+        }
+        
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+                  margin: 0 auto; /* Center the button */
+            display: block;
+        }
+        
+        .input[type="submit"]:hover {
+            background-color: #333;
+        }
+        
+        .b {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 120%;
+            color: #27ae60; /* Dark Green */
+        }
+        .result{
+            font-size:20px;
+            margin:0 auto;
+        }
+        .textarea {
+            width: 100%;
+            height: 100px; 
+            width:100px;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius:5px;
+            text-align:center;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Bank Customer Churn Prediction</b></h1>
+    <div class="card">
+        <form action="/login" method="post">
+            <table align="center" cellpadding="10">
+                <tr style="background-color:skyblue"><td><label for="creditscore">Credit Score</label></td>
+                <td><input type="text" name="cs" size="50" placeholder="Enter Credit Score" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="age">Age</label></td>
+                <td><input type="text" name="ag" size="50" placeholder="Enter Age" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="tenure">Tenure</label></td>
+                <td><input type="text" name="tn" size="50" placeholder="Enter Tenure" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="balance">Account Balance</label></td>
+                <td><input type="text" name="bl" size="50" placeholder="Enter Account Balance" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="products">Enter number of Products</label></td>
+                <td><input type="text" name="pd" size="50" placeholder="Enter Number of Products" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="credit">Do the Customer have Credit Card?(1=Yes,0=No)</label></td>
+                <td><input type="text" name="cd" size="50" placeholder="Enter Credit Card (1=Yes, 0=No)" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="active">Is the Customer Active Member(1=Yes,0=No)</label></td>
+                <td><input type="text" name="ac" placeholder="Enter Active Member (1=Yes, 0=No)" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="salary">Enter the Estimated Salary</label></td>
+                <td><input type="text" name="sl" placeholder="Enter Estimated Salary" /></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="location">Enter the Location</label></td>
+                <td><select name="location">
+                    <option value="germany">Germany</option>
+                    <option value="spain">Spain</option>
+                    <option value="france">France</option>
+                    </select></td></tr>
+                
+                <tr style="background-color:skyblue"><td><label for="gender">Gender</label></td>
+                <td><select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    </select></td></tr>
+                
+                <tr><td colspan="2" align="center"><input type="submit" value="Predict if Customer leaves the Bank?"></td></tr>
+            </table>
+        </form>
+    </div>
+    <h1>Result:</h1>
+    <textarea columns="50" rows="4" readonly>{{y}}</textarea>
+    <b></b>
+</body>
+</html>
